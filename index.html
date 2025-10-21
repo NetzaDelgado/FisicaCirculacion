@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Física de la Circulación Sanguínea</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .concept-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .concept-card:hover {
+            transform: translateY(-5px);
+        }
+        .concept-card-content {
+            flex-grow: 1;
+        }
+        .formula {
+            background-color: #f3f4f6;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-family: monospace;
+            font-size: 1.1rem;
+            color: #1f2937;
+            text-align: center;
+            border-left: 4px solid #3b82f6;
+        }
+        .quiz-option {
+            cursor: pointer;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            transition: all 0.2s;
+        }
+        .quiz-option:hover {
+            background-color: #e5e7eb;
+        }
+        .quiz-option.correct {
+            background-color: #d1fae5;
+            border-color: #10b981;
+        }
+        .quiz-option.incorrect {
+            background-color: #fee2e2;
+            border-color: #ef4444;
+        }
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            color: white;
+            background-color: #3b82f6;
+            transition: background-color 0.2s;
+        }
+        .btn:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-blue-600">Hemodinámica: La Física de la Circulación</h1>
+            <p class="mt-4 text-lg text-gray-600">Explorando los principios físicos que gobiernan el flujo de la sangre.</p>
+        </header>
+
+        <!-- Sección de Conceptos -->
+        <section id="concepts">
+            <h2 class="text-3xl font-bold mb-8 border-b-4 border-blue-500 pb-2">Conceptos Fundamentales</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Card 1: Ley de Ohm -->
+                <div class="concept-card p-6">
+                    <div class="concept-card-content">
+                        <h3 class="text-2xl font-semibold mb-3 text-blue-700">1. La "Ley de Ohm" de la Hemodinámica</h3>
+                        <p class="mb-4">El flujo sanguíneo es análogo a un circuito eléctrico. La sangre fluye de alta a baja presión, venciendo una resistencia.</p>
+                        <ul class="list-disc list-inside space-y-2 mb-4">
+                            <li><span class="font-semibold">Flujo (Q):</span> Volumen de sangre por unidad de tiempo.</li>
+                            <li><span class="font-semibold">Presión (ΔP):</span> La fuerza que impulsa la sangre.</li>
+                            <li><span class="font-semibold">Resistencia (R):</span> Oposición al flujo.</li>
+                        </ul>
+                    </div>
+                    <div class="formula mt-auto">ΔP = Q × R</div>
+                </div>
+
+                <!-- Card 2: Ley de Poiseuille -->
+                <div class="concept-card p-6">
+                    <div class="concept-card-content">
+                        <h3 class="text-2xl font-semibold mb-3 text-blue-700">2. Ley de Poiseuille</h3>
+                        <p class="mb-4">Esta ley describe los factores que determinan la resistencia vascular. El más importante es el radio del vaso, elevado a la cuarta potencia.</p>
+                         <img src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><rect width="300" height="200" fill="%23f7fafc"/><g fill="%234a5568" font-family="sans-serif" font-size="12"><text x="10" y="25">Radio Grande (r)</text><rect x="10" y="35" width="280" height="40" rx="20" fill="%23a0aec0"/><path d="M20 55 L 260 55" stroke="%233b82f6" stroke-width="3" marker-end="url(%23arrowhead)"/><text x="120" y="50" fill="white" font-weight="bold">Flujo Alto</text><text x="10" y="95">Resistencia Baja</text><text x="10" y="125">Radio Pequeño (r/2)</text><rect x="10" y="135" width="280" height="20" rx="10" fill="%23a0aec0"/><path d="M20 145 L 150 145" stroke="%233b82f6" stroke-width="2" marker-end="url(%23arrowhead)"/><text x="60" y="140" fill="white" font-weight="bold">Flujo Bajo</text><text x="10" y="175">Resistencia Alta (x16)</text></g><defs><marker id="arrowhead" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="%233b82f6"/></marker></defs></svg>' alt="Diagrama de la Ley de Poiseuille" class="rounded-lg mb-4 w-full object-cover bg-gray-100">
+                        <p class="mb-4">Pequeños cambios en el radio de las arteriolas causan cambios enormes en la resistencia y, por tanto, en la presión arterial.</p>
+                    </div>
+                    <div class="formula mt-auto">R = 8ηL / πr⁴</div>
+                </div>
+
+                <!-- Card 3: Ecuación de Continuidad -->
+                <div class="concept-card p-6">
+                    <div class="concept-card-content">
+                        <h3 class="text-2xl font-semibold mb-3 text-blue-700">3. Ecuación de Continuidad</h3>
+                        <p class="mb-4">El flujo (Q) es constante en un sistema cerrado. Por ello, la velocidad (v) de la sangre es inversamente proporcional al área total (A) de la sección transversal.</p>
+                        <img src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><rect width="300" height="200" fill="%23f7fafc"/><path d="M10 60 C 80 60, 80 40, 150 40 L 150 40 C 220 40, 220 60, 290 60 L 290 140 C 220 140, 220 160, 150 160 L 150 160 C 80 160, 80 140, 10 140 Z" fill="%23a0aec0"/><g fill="%234a5568" font-family="sans-serif" font-size="12"><text x="40" y="30">Área A₁</text><text x="220" y="30">Área A₂ (A₁ > A₂)</text><path d="M30 80 L 80 80 M30 100 L 80 100 M30 120 L 80 120" stroke="%233b82f6" stroke-width="2" marker-end="url(%23arrow)"/><text x="40" y="55">Velocidad v₁</text><path d="M220 90 L 270 90 M220 100 L 270 100 M220 110 L 270 110" stroke="%233b82f6" stroke-width="2" marker-end="url(%23arrow)"/><text x="210" y="55">Velocidad v₂ (v₂ > v₁)</text></g><defs><marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="%233b82f6"/></marker></defs></svg>' alt="Ilustración de la Ecuación de Continuidad en vasos sanguíneos" class="rounded-lg mb-4 w-full object-cover bg-gray-100">
+                        <p class="mb-4">La sangre fluye muy lento en los capilares (área total enorme) para permitir el intercambio de gases y nutrientes.</p>
+                    </div>
+                    <div class="formula mt-auto">Q = A₁v₁ = A₂v₂</div>
+                </div>
+
+                <!-- Card 4: Ecuación de Bernoulli -->
+                <div class="concept-card p-6">
+                    <div class="concept-card-content">
+                        <h3 class="text-2xl font-semibold mb-3 text-blue-700">4. Ecuación de Bernoulli</h3>
+                        <p class="mb-4">Describe la conservación de la energía en un fluido. Donde la velocidad es alta, la presión lateral es baja, y viceversa.</p>
+                        <p class="mb-4">Es crucial para entender los efectos de una <strong>estenosis</strong> (estrechamiento). En el punto estrecho, la velocidad aumenta y la presión disminuye.</p>
+                    </div>
+                    <div class="formula mt-auto">P + ½ρv² + ρgh = constante</div>
+                </div>
+
+                <!-- Card 5: Flujo Laminar vs. Turbulento -->
+                <div class="concept-card p-6">
+                    <div class="concept-card-content">
+                        <h3 class="text-2xl font-semibold mb-3 text-blue-700">5. Flujo Laminar vs. Turbulento</h3>
+                        <p class="mb-4">El flujo ideal es <strong>laminar</strong> (ordenado, silencioso). Cuando la velocidad es muy alta o la sangre es poco viscosa (anemia), el flujo se vuelve <strong>turbulento</strong> (caótico, ruidoso).</p>
+                        <img src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><rect width="300" height="200" fill="%23f7fafc"/><g fill="%234a5568" font-family="sans-serif" font-size="12"><text x="10" y="25">Flujo Laminar (Re bajo)</text><rect x="10" y="35" width="280" height="40" rx="5" fill="%23a0aec0"/><path d="M20 45 L 280 45 M20 55 L 280 55 M20 65 L 280 65" stroke="%233b82f6" stroke-width="1.5"/><text x="10" y="115">Flujo Turbulento (Re alto)</text><rect x="10" y="125" width="280" height="40" rx="5" fill="%23a0aec0"/><path d="M 20 145 C 50 130, 80 160, 110 145 S 170 130, 200 145 S 260 160, 290 145 M 20 150 C 60 165, 90 135, 120 150 S 180 165, 210 150 S 270 135, 290 150" stroke="%23ef4444" stroke-width="1.5" fill="none"/></g></svg>' alt="Comparación de flujo laminar y turbulento" class="rounded-lg mb-4 w-full object-cover bg-gray-100">
+                        <p class="mb-4">El <strong>Número de Reynolds (Re)</strong> predice esta transición. La turbulencia es la causa de los "soplos" cardíacos que se pueden auscultar.</p>
+                    </div>
+                </div>
+                 <!-- Card 6: Sistema Circulatorio General -->
+                <div class="concept-card p-6">
+                    <div class="concept-card-content">
+                        <h3 class="text-2xl font-semibold mb-3 text-blue-700">6. El Sistema Circulatorio</h3>
+                        <p class="mb-4">El corazón actúa como una bomba doble que impulsa la sangre a través de dos circuitos:</p>
+                         <ul class="list-disc list-inside space-y-2 mb-4">
+                            <li><span class="font-semibold">Circulación Pulmonar:</span> Lleva sangre a los pulmones para oxigenarla.</li>
+                            <li><span class="font-semibold">Circulación Sistémica:</span> Distribuye la sangre oxigenada al resto del cuerpo.</li>
+                        </ul>
+                        <img src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><rect width="300" height="200" fill="%23f7fafc"/><g font-family="sans-serif" font-size="10" text-anchor="middle"><rect x="125" y="70" width="50" height="60" fill="%23f87171" rx="5"/><text x="150" y="85">VI</text><text x="150" y="120">VD</text><rect x="125" y="70" width="25" height="30" fill="%23fca5a5"/><text x="137.5" y="85">AI</text><rect x="125" y="100" width="25" height="30" fill="%2393c5fd"/><text x="137.5" y="120">AD</text><text x="150" y="65" font-weight="bold">Corazón</text><rect x="125" y="10" width="50" height="30" rx="5" fill="%23a5b4fc"/><text x="150" y="30">Pulmones</text><rect x="10" y="160" width="280" height="30" rx="5" fill="%23a0aec0"/><text x="150" y="180">Cuerpo (Circulación Sistémica)</text><path d="M137.5 100 v -20 h 25 v 20" fill="none" stroke="%23ef4444" stroke-width="2"/><path d="M162.5 130 v 30 h -125 v -30 h 20" fill="none" stroke="%23ef4444" stroke-width="2" marker-end="url(%23ared)"/><path d="M10 160 v -50 h 115" fill="none" stroke="%233b82f6" stroke-width="2" marker-end="url(%23ablue)"/><path d="M137.5 40 v 30" fill="none" stroke="%233b82f6" stroke-width="2"/><path d="M162.5 40 v 60 h -25" fill="none" stroke="%23ef4444" stroke-width="2" marker-end="url(%23ared2)"/><path d="M137.5 130 v-30" fill="none" stroke="%233b82f6" stroke-width="2"/><text x="195" y="55" font-size="9" fill="%234a5568">C. Pulmonar</text></g><defs><marker id="ared" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="%23ef4444"/></marker><marker id="ablue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="%233b82f6"/></marker><marker id="ared2" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="%23ef4444"/></marker></defs></svg>' alt="Diagrama del sistema circulatorio" class="rounded-lg w-full object-cover bg-gray-100">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Sección de Ejercicios -->
+        <section id="exercises" class="mt-16">
+            <h2 class="text-3xl font-bold mb-8 border-b-4 border-blue-500 pb-2">Ejercicios Interactivos</h2>
+            
+            <div id="quiz-container" class="bg-white p-6 md:p-8 rounded-lg shadow-lg">
+                <div id="question-container" class="mb-6">
+                    <p id="question-text" class="text-xl font-medium mb-4"></p>
+                    <div id="options-container" class="space-y-3"></div>
+                </div>
+                <div id="feedback-container" class="mt-4 text-lg font-medium"></div>
+                <div class="flex justify-between items-center mt-6">
+                    <p id="progress-text" class="text-sm text-gray-500"></p>
+                    <button id="next-btn" class="btn hidden">Siguiente Pregunta</button>
+                    <button id="restart-btn" class="btn hidden">Reiniciar Quiz</button>
+                </div>
+                 <div id="score-container" class="text-center hidden">
+                    <h3 class="text-2xl font-bold">¡Quiz Completado!</h3>
+                    <p id="final-score" class="text-3xl mt-4"></p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        const quizData = [
+            {
+                question: "Según la Ley de Poiseuille, si el radio de una arteria se reduce a la mitad, ¿cómo cambia su resistencia al flujo?",
+                options: ["Se duplica", "Aumenta 4 veces", "Aumenta 16 veces", "Se reduce a la mitad"],
+                answer: "Aumenta 16 veces",
+                rationale: "La resistencia es inversamente proporcional al radio a la cuarta potencia (1 / (1/2)⁴), lo que resulta en un aumento de 16 veces."
+            },
+            {
+                question: "De acuerdo con la Ecuación de Continuidad, ¿en qué parte del sistema circulatorio la velocidad de la sangre es MÁS LENTA?",
+                options: ["En la aorta", "En los capilares", "En las arterias", "En las venas cavas"],
+                answer: "En los capilares",
+                rationale: "El área de sección transversal total de los capilares es la más grande, por lo que la velocidad debe ser la más baja para mantener el flujo constante."
+            },
+            {
+                question: "Un paciente con anemia severa (sangre menos viscosa) y una válvula cardíaca estrecha (estenosis) es propenso a tener un flujo sanguíneo...",
+                options: ["Laminar", "Turbulento", "Estático", "Inverso"],
+                answer: "Turbulento",
+                rationale: "La baja viscosidad y la alta velocidad a través de la estenosis aumentan el Número de Reynolds, causando turbulencia (lo que se oye como un 'soplo')."
+            },
+            {
+                question: "Si la presión arterial aumenta pero el gasto cardíaco (flujo) se mantiene igual, ¿qué ha ocurrido con la resistencia vascular periférica?",
+                options: ["Ha disminuido", "No ha cambiado", "Se ha vuelto cero", "Ha aumentado"],
+                answer: "Ha aumentado",
+                rationale: "Según la 'Ley de Ohm' (ΔP = Q × R), si la presión (ΔP) aumenta y el flujo (Q) es constante, la resistencia (R) debe haber aumentado."
+            }
+        ];
+
+        const questionText = document.getElementById('question-text');
+        const optionsContainer = document.getElementById('options-container');
+        const feedbackContainer = document.getElementById('feedback-container');
+        const nextBtn = document.getElementById('next-btn');
+        const restartBtn = document.getElementById('restart-btn');
+        const progressText = document.getElementById('progress-text');
+        const scoreContainer = document.getElementById('score-container');
+        const finalScoreText = document.getElementById('final-score');
+        const questionContainer = document.getElementById('question-container');
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            resetState();
+            const currentQuestion = quizData[currentQuestionIndex];
+            questionText.innerText = currentQuestion.question;
+            progressText.innerText = `Pregunta ${currentQuestionIndex + 1} de ${quizData.length}`;
+            
+            currentQuestion.options.forEach(option => {
+                const optionElement = document.createElement('div');
+                optionElement.innerText = option;
+                optionElement.classList.add('quiz-option');
+                optionElement.addEventListener('click', () => selectAnswer(optionElement, currentQuestion.answer, currentQuestion.rationale));
+                optionsContainer.appendChild(optionElement);
+            });
+        }
+
+        function resetState() {
+            optionsContainer.innerHTML = '';
+            feedbackContainer.innerHTML = '';
+            nextBtn.classList.add('hidden');
+            Array.from(optionsContainer.children).forEach(option => {
+                option.classList.remove('correct', 'incorrect');
+                option.style.pointerEvents = 'auto';
+            });
+        }
+
+        function selectAnswer(selectedOption, correctAnswer, rationale) {
+            Array.from(optionsContainer.children).forEach(option => {
+                option.style.pointerEvents = 'none'; // Disable further clicks
+                if (option.innerText === correctAnswer) {
+                    option.classList.add('correct');
+                } else {
+                    option.classList.remove('hover:bg-gray-200');
+                }
+            });
+
+            if (selectedOption.innerText === correctAnswer) {
+                score++;
+                feedbackContainer.innerHTML = `<p class="text-green-600">¡Correcto!</p>`;
+            } else {
+                selectedOption.classList.add('incorrect');
+                feedbackContainer.innerHTML = `<p class="text-red-600">Incorrecto.</p><p class="mt-2 text-sm text-gray-700">${rationale}</p>`;
+            }
+
+            if (currentQuestionIndex < quizData.length - 1) {
+                nextBtn.classList.remove('hidden');
+            } else {
+                showScore();
+            }
+        }
+
+        function showScore() {
+            questionContainer.classList.add('hidden');
+            progressText.classList.add('hidden');
+            feedbackContainer.classList.add('hidden');
+            scoreContainer.classList.remove('hidden');
+            restartBtn.classList.remove('hidden');
+            finalScoreText.textContent = `Tu puntuación: ${score} de ${quizData.length}`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentQuestionIndex++;
+            loadQuestion();
+        });
+        
+        restartBtn.addEventListener('click', () => {
+            currentQuestionIndex = 0;
+            score = 0;
+            scoreContainer.classList.add('hidden');
+            questionContainer.classList.remove('hidden');
+            progressText.classList.remove('hidden');
+            feedbackContainer.classList.remove('hidden');
+            restartBtn.classList.add('hidden');
+            loadQuestion();
+        });
+
+
+        // Initial load
+        loadQuestion();
+
+    </script>
+
+</body>
+</html>
+
